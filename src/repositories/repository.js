@@ -1,5 +1,13 @@
+const { PgConnection } = require("../configs/pgsql.config")
+
 exports.repository = {
-    execute(nome) {
-        return `<h1>Deu certo</h1><h1>${nome}</h1>`
+    execute(nome, sobrenome) {
+        return `<h2>Deu certo</h2><h1>${nome} ${sobrenome}</h1>`
+    },
+    fetchCompras() {
+        const compras = PgConnection.quey({
+            query: `SELECT * FROM compras`
+        })
+        return compras
     }
 }
