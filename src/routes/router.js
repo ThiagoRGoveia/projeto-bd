@@ -1,7 +1,7 @@
 
-const {routes} = require('./routes')
+const { routes } = require('./routes')
 exports.router = server => {
-    routes.forEach(route => {
-        server[route.method](route.route, route.handler)
-    })
+  routes.forEach(route => {
+    server[route.method](route.route, route.handler)
+  })
 }

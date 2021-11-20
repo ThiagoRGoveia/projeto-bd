@@ -1,4 +1,4 @@
-const express =  require('express')
+const express = require('express')
 const { router } = require('./src/routes/router')
 
 // const { PgConnection } = require("./src/configs/pgsql.config");
@@ -8,7 +8,7 @@ const server = express()
 router(server)
 
 server.listen(3000, () => {
-    console.log('Server is running on port 3000')
+  console.log('Server is running on port 3000')
 })
 
 // PgConnection.query({

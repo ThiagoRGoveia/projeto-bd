@@ -16,7 +16,7 @@ class PgConnection {
       const { rows: result } = await connection.query(query, values)
       return result
     } catch (e) {
-        console.log(e)
+      console.log(e)
     } finally {
       if (connection) {
         connection.release()

@@ -10,6 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
     "express": "^4.17.1",
     "knex": "^0.95.11",
     "nodemon": "^2.0.14",

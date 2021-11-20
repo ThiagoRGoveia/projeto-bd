@@ -1,8 +1,8 @@
-exports.controller = ({ repository }) => ({
-    home (req, res)  {
-        const {nome} = req.query
-        const html = repository.execute(nome)
-        res.send(html)
-        res.end()
-    }
+exports.controller = ({ repository, loadQueries }) => ({
+  async query (req, res) {
+    const { query } = req.query
+    const response = await repository.execute(loadQueries[query])
+    res.status(200).send(response)
+    res.end()
+  }
 })
