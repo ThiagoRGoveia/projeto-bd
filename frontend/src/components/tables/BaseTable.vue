@@ -14,6 +14,7 @@
         <b-button
           type="is-danger"
           icon-right="delete"
+          @click="handleDelete(row.id)"
         />
       </b-table-column>
 
@@ -26,10 +27,18 @@ import aluno from './columns/aluno'
 
 export default {
   name: 'BaseTable',
+  props: ['entity'],
   data () {
     return {
       data: [],
       columns: aluno
+    }
+  },
+  methods: {
+    handleDelete(id) {
+      this.$http.delete(`/delete/${this.entity}/${id}`).then(
+        this.row = this.row.filter(row => row.id !== id)
+      )
     }
   },
   created () {
