@@ -4,11 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev-backend": "nodemon run backend/index.js"
+        "dev": "nodemon run backend/index.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "cors": "^2.8.5",
         "dotenv": "^10.0.0",
         "eslint": "^8.2.0",
         "eslint-config-standard": "^16.0.3",
