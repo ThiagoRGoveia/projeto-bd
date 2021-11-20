@@ -1,4 +1,4 @@
 const fs = require('fs')
 exports.loadQueries = () => ({
-  first: fs.readFileSync('backend/src/queries/buscar-algo.sql').toString()
+  first: fs.readFileSync('src/queries/buscar-algo.sql').toString()
 })
