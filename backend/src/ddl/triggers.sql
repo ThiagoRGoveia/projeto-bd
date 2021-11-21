@@ -1,0 +1,69 @@
+CREATE OR REPLACE FUNCTION checar_ficha_limpa() RETURNS trigger AS $checar_ficha_limpa$
+BEGIN
+  IF EXISTS(
+      SELECT 1 FROM processos WHERE individuo_id IN (
+        SELECT individuo_id FROM individuos_pessoa_fisica WHERE individuo_pessoa_fisica_id IN (
+          SELECT individuo_pessoa_fisica_id FROM candidatos WHERE id = NEW.candidato_id
+        )
+      ) AND resultado = 'procedente'
+    )
+  THEN RAISE EXCEPTION 'Não é possível adicionar a candidatura, pois o candidato % possui processos com resultado "procedente".', NEW.candidato_id;
+  END IF
+  RETURN NEW;
+END;
+$checar_ficha_limpa$ LANGUAGE plpgsql;
+CREATE TRIGGER checar_ficha_limpa
+BEFORE INSERT OR UPDATE ON candidaturas
+FOR EACH ROW EXECUTE PROCEDURE checar_ficha_limpa();
+
+
+CREATE OR REPLACE FUNCTION checar_doacao_pj() RETURNS trigger AS $checar_doacao_pj$
+BEGIN
+  IF EXISTS(
+      SELECT 1 FROM individuos_pessoa_juridica WHERE individuo_id  IN (
+          SELECT individuo_id FROM doadores WHERE id = NEW.doador_id
+      )
+    ) AND EXISTS(
+      SELECT 1 FROM candidaturas WHERE id = NEW.candidatura_id AND doador_id = NEW.doador_id
+    )
+    THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
+  END IF
+  RETURN NEW;
+END;
+$checar_doacao_pj$ LANGUAGE plpgsql;
+CREATE TRIGGER checar_doacao_pj
+BEFORE INSERT OR UPDATE ON candidatura_doacao
+FOR EACH ROW EXECUTE PROCEDURE checar_doacao_pj();
+
+CREATE OR REPLACE FUNCTION checar_vice_candidato() RETURNS trigger AS $checar_vice_candidato$
+BEGIN
+  IF EXISTS(
+      SELECT 1 FROM candidaturas where candidato_id = NEW.vice_candidato
+    )
+    THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
+  END IF
+  RETURN NEW;
+END;
+$checar_vice_candidato$ LANGUAGE plpgsql;
+CREATE TRIGGER checar_vice_candidato
+BEFORE CREATE ON candidaturas
+FOR EACH ROW EXECUTE PROCEDURE checar_vice_candidato();
+
+
+CREATE OR REPLACE FUNCTION checar_numero_eleitos() RETURNS trigger AS $checar_numero_eleitos$
+BEGIN
+  IF
+    NEW.eleito = TRUE AND
+    (
+      SELECT COUNT(*) FROM candidaturas WHERE eleito = true AND cargo_id = NEW.cargo_id
+    ) >= (
+      SELECT vagas FROM cargos WHERE id = NEW.cargo_id
+    )
+    THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
+  END IF
+  RETURN NEW;
+END;
+$checar_numero_eleitos$ LANGUAGE plpgsql;
+CREATE TRIGGER checar_numero_eleitos
+BEFORE UPDATE OF eleito ON candidaturas
+FOR EACH ROW EXECUTE PROCEDURE checar_numero_eleitos();
