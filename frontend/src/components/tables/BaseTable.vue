@@ -1,12 +1,13 @@
 <template>
   <div>
-    <b-table :data="data">
+    <b-table :data="data" paginated :per-page="20" >
       <b-table-column
         v-for="column in columns"
         :key="column.name"
         :field="column.name"
         :label="column.label"
         v-slot="props"
+        sortable
       >
         {{ $columnFormater(column.name, props.row[column.name]) }}
       </b-table-column>
