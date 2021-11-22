@@ -193,9 +193,9 @@ INSERT INTO candidatos VALUES(43,43,17);
 INSERT INTO candidatos VALUES(44,44,14);
 INSERT INTO candidatos VALUES(45,45,17);
 INSERT INTO candidatos VALUES(46,46,17);
-INSERT INTO candidatos VALUES(47,47,77);
+INSERT INTO candidatos VALUES(47,47,45);
 INSERT INTO candidatos VALUES(48,48,55);
-INSERT INTO candidatos VALUES(49,49,10);
+INSERT INTO candidatos VALUES(49,49,11);
 INSERT INTO candidatos VALUES(50,50,45);
 INSERT INTO candidatos VALUES(51,51,28);
 INSERT INTO candidatos VALUES(52,52,45);
@@ -265,8 +265,10 @@ INSERT INTO cargos VALUES(226,'Deputado Estadual',24,NULL,'Tocantins',FALSE);
 INSERT INTO cargos VALUES(301,'Prefeito',1,'Sao Carlos',NULL,FALSE);
 INSERT INTO cargos VALUES(302,'Verador',21,'Sao Carlos',NULL,FALSE);
 
+
+--(id pleito, ano, tipo)
 INSERT INTO pleitos VALUES(1,2022,'federal');
-INSERT INTO pleitos VALUES(2,2024,'Municipal');
+INSERT INTO pleitos VALUES(2,2024,'municipal');
 
 --(id candidatura, id candidato, id cargo, id pleito , ano, votos, vice candidato, eleito booleano)
 --presidentes
@@ -330,7 +332,7 @@ INSERT INTO processos_judiciais VALUES(1,2,'2017-08-18','2021-08-18','julgado','
 INSERT INTO processos_judiciais VALUES(2,1,'2017-09-03','2021-09-06','julgado','improcedente');
 INSERT INTO processos_judiciais VALUES(3,36,'2016-05-07','2019-10-30','julgado','procedente');
 INSERT INTO processos_judiciais VALUES(4,37,'2018-05-02','2021-02-23','julgado','procedente');
-INSERT INTO processos_judiciais VALUES(5,14,'','2021-02-23','julgado','procedente');
+INSERT INTO processos_judiciais VALUES(5,14,'2015-11-22','2021-02-23','julgado','procedente');
 
 -- (id do apoio, id do apoiante, id candidatura)
 INSERT INTO equipes_apoio VALUES(1,51,1);
