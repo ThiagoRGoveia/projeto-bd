@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS equipes_apoio (
       FOREIGN KEY (candidatura_id)
       REFERENCES candidaturas (id)
       ON DELETE CASCADE
-      ON UPDATE CASCADE
+      ON UPDATE CASCADE,
 
   CONSTRAINT equipes_apoio_individuo_individuo_id_fk
       FOREIGN KEY (individuo_pessoa_fisica_id)
