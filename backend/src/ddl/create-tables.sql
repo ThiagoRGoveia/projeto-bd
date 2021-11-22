@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS individuos_pessoa_fisica (
 );
 CREATE TABLE IF NOT EXISTS candidatos (
   id INTEGER PRIMARY KEY,
-  individuo_pessoa_fisica_id INTEGER NOT NULL,
+  individuo_pessoa_fisica_id INTEGER NOT NULL UNIQUE,
   partido_id INTEGER NOT NULL,
 
   CONSTRAINT individuos_candidato_individuo_id_fk
@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS processos_judiciais (
 );
 CREATE TABLE IF NOT EXISTS equipes_apoio (
   id INTEGER PRIMARY KEY,
+  individuo_pessoa_fisica_id INTEGER NOT NULL,
   candidatura_id INTEGER NOT NULL,
 
   CONSTRAINT candidaturas_equipe_apoio_candidato_id_fk
@@ -127,18 +128,6 @@ CREATE TABLE IF NOT EXISTS equipes_apoio (
       REFERENCES candidaturas (id)
       ON DELETE CASCADE
       ON UPDATE CASCADE
-);
-CREATE TABLE IF NOT EXISTS equipes_apoio_individuo (
-  id INTEGER PRIMARY KEY,
-  equipe_apoio_id INTEGER NOT NULL,
-  individuo_pessoa_fisica_id INTEGER NOT NULL,
-  ano INTEGER NOT NULL,
-
-  CONSTRAINT equipes_apoio_individuo_equipe_apoio_id_fk
-      FOREIGN KEY (equipe_apoio_id)
-      REFERENCES equipes_apoio (id)
-      ON DELETE CASCADE
-      ON UPDATE CASCADE,
 
   CONSTRAINT equipes_apoio_individuo_individuo_id_fk
       FOREIGN KEY (individuo_pessoa_fisica_id)
@@ -147,35 +136,24 @@ CREATE TABLE IF NOT EXISTS equipes_apoio_individuo (
       ON UPDATE CASCADE,
 
   CONSTRAINT equipes_apoio_individuo_ano_unico
-      UNIQUE (equipe_apoio_id, individuo_pessoa_fisica_id, ano)
+      UNIQUE (candidatura_id, individuo_pessoa_fisica_id)
 );
 
 
-CREATE TABLE IF NOT EXISTS doadores (
+CREATE TABLE IF NOT EXISTS doacoes (
   id INTEGER PRIMARY KEY,
   individuo_id INTEGER NOT NULL,
-
-  CONSTRAINT individuos_doador_individuo_id_fk
-      FOREIGN KEY (individuo_id)
-      REFERENCES individuos (id)
-      ON DELETE CASCADE
-      ON UPDATE CASCADE
-);
-
-CREATE TABLE IF NOT EXISTS candidatura_doacao (
-  id INTEGER PRIMARY KEY,
-  doador_id INTEGER NOT NULL,
   candidatura_id INTEGER NOT NULL,
   valor_doado FLOAT NOT NULL,
 
 
-  CONSTRAINT doadores_candidatura_doacao_doador_id_fk
-      FOREIGN KEY (doador_id)
-      REFERENCES doadores (id)
+  CONSTRAINT individuo_candidatura_doacao_individuo_id_fk
+      FOREIGN KEY (individuo_id)
+      REFERENCES individuos (id)
       ON DELETE CASCADE
       ON UPDATE CASCADE,
 
-  CONSTRAINT doadores_candidatura_doacao_candidatura_id_fk
+  CONSTRAINT individuos_candidatura_individuo_candidatura_id_fk
       FOREIGN KEY (candidatura_id)
       REFERENCES candidaturas (id)
       ON DELETE CASCADE
