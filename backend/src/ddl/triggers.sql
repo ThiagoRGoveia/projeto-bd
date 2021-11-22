@@ -8,7 +8,7 @@ BEGIN
       ) AND resultado = 'procedente'
     )
   THEN RAISE EXCEPTION 'Não é possível adicionar a candidatura, pois o candidato % possui processos com resultado "procedente".', NEW.candidato_id;
-  END IF
+  END IF;
   RETURN NEW;
 END;
 $checar_ficha_limpa$ LANGUAGE plpgsql;
@@ -27,7 +27,7 @@ BEGIN
       SELECT 1 FROM candidaturas WHERE id = NEW.candidatura_id AND doador_id = NEW.doador_id
     )
     THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
-  END IF
+  END IF;
   RETURN NEW;
 END;
 $checar_doacao_pj$ LANGUAGE plpgsql;
@@ -41,12 +41,12 @@ BEGIN
       SELECT 1 FROM candidaturas where candidato_id = NEW.vice_candidato
     )
     THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
-  END IF
+  END IF;
   RETURN NEW;
 END;
 $checar_vice_candidato$ LANGUAGE plpgsql;
 CREATE TRIGGER checar_vice_candidato
-BEFORE CREATE ON candidaturas
+BEFORE INSERT ON candidaturas
 FOR EACH ROW EXECUTE PROCEDURE checar_vice_candidato();
 
 
@@ -60,7 +60,7 @@ BEGIN
       SELECT vagas FROM cargos WHERE id = NEW.cargo_id
     )
     THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
-  END IF
+  END IF;
   RETURN NEW;
 END;
 $checar_numero_eleitos$ LANGUAGE plpgsql;
