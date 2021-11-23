@@ -1,5 +1,5 @@
 SELECT
-	i.id AS id,
+	c.id AS id,
 	c.eleito AS foi_eleito,
 	c.ano AS ano_eleicao,
 	c.numero_votos AS votos_candidato,

@@ -11,11 +11,14 @@
       >
         {{ $columnFormater(column.name, props.row[column.name]) }}
       </b-table-column>
-      <b-table-column label="Deletar">
+      <b-table-column
+        v-slot="props"
+       label="Deletar"
+      >
         <b-button
           type="is-danger"
           icon-right="delete"
-          @click="handleDelete(row.id)"
+          @click="handleDelete(props.row.id)"
         />
       </b-table-column>
 
@@ -28,7 +31,7 @@ import getColumns from './columns/index'
 
 export default {
   name: 'BaseTable',
-  props: ['entity', 'table'],
+  props: ['table'],
   data () {
     return {
       data: [],
@@ -37,21 +40,21 @@ export default {
   },
   methods: {
     handleDelete(id) {
-      this.$http.delete(`/delete/${this.entity}/${id}`).then(
+      this.$http.get(`/query?query=delete_${this.table}&params[]=${id}`).then(
         this.row = this.row.filter(row => row.id !== id)
       )
     }
   },
   watch: {
     table() {
-    this.$http.get(`/query?query=${this.table}`).then(({data}) =>{
+    this.$http.get(`/query?query=list_${this.table}`).then(({data}) =>{
         this.data = data
         this.columns = getColumns(this.table)
       })
     }
   },
   created () {
-      this.$http.get(`/query?query=${this.table}`).then(({data}) =>{
+      this.$http.get(`/query?query=list_${this.table}`).then(({data}) =>{
         if (data) {
           this.data = data
           this.columns = getColumns(this.table)

@@ -27,13 +27,15 @@ export default {
     return {
       selectedTable: 'list_candidacy',
       options: [
-        {table: 'list_candidacy', label: 'Candidaturas'},
-        {table: 'list_donations', label: 'Doações'},
-        {table: 'list_suits', label: 'Processos Judiciais'},
-        {table: 'list_elected', label: 'Eleitos'},
-        {table: 'list_support_teams', label: 'Equipes de apoio'},
-        {table: 'list_crime_free_candidates', label: 'Candidatos ficha limpa'},
-        {table: 'list_parties', label: 'Partidos'},
+        {table: 'candidacy', label: 'Candidaturas'},
+        {table: 'donations', label: 'Doações'},
+        {table: 'suits', label: 'Processos Judiciais'},
+        {table: 'elected', label: 'Eleitos'},
+        {table: 'support_teams', label: 'Equipes de apoio'},
+        {table: 'crime_free_candidates', label: 'Candidatos ficha limpa'},
+        {table: 'parties', label: 'Partidos'},
+        {table: 'positions', label: 'Cargos'},
+        {table: 'elections', label: 'Pleitos'},
       ]
     }
   },

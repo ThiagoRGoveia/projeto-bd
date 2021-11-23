@@ -2,17 +2,21 @@ import candidacies from "./candidacies"
 import crime_free_candidates from "./crime_free_candidates"
 import donations from "./donations"
 import elected from "./elected"
+import elections from "./elections"
 import parties from "./parties"
+import positions from "./positions"
 import suits from "./suits"
 import support_teams from "./support_teams"
 const columns = {
-  list_candidacy: candidacies,
-  list_donations: donations,
-  list_suits: suits,
-  list_elected: elected,
-  list_support_teams: support_teams,
-  list_crime_free_candidates: crime_free_candidates,
-  list_parties: parties
+  candidacy: candidacies,
+  donations: donations,
+  suits: suits,
+  elected: elected,
+  support_teams: support_teams,
+  crime_free_candidates: crime_free_candidates,
+  parties: parties,
+  positions: positions,
+  elections: elections
 }
 
 export default (column) => {
