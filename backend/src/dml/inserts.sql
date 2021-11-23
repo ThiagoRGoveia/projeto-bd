@@ -346,7 +346,13 @@ INSERT INTO processos_judiciais VALUES(1,2,'2017-08-18','2021-08-18','julgado','
 INSERT INTO processos_judiciais VALUES(2,1,'2017-09-03','2021-09-06','julgado','improcedente');
 INSERT INTO processos_judiciais VALUES(3,25,'2016-05-07','2019-10-30','julgado','procedente');
 INSERT INTO processos_judiciais VALUES(4,14,'2018-05-02','2021-02-23','julgado','procedente');
-INSERT INTO processos_judiciais VALUES(5,14,'2015-11-22','2021-02-23','julgado','procedente');
+INSERT INTO processos_judiciais VALUES(5,14,'2015-11-22','2021-02-23','julgado','improcedente');
+INSERT INTO processos_judiciais VALUES(6,24,'2020-03-10 ',NULL,'tramitação',NULL);
+INSERT INTO processos_judiciais VALUES(7,35,'2019-12-21',NULL,'tramitação',NULL);
+INSERT INTO processos_judiciais VALUES(8,45,'2018-12-11',NULL,'tramitação',NULL);
+INSERT INTO processos_judiciais VALUES(9,36,'2020-08-20',NULL,'tramitação',NULL);
+INSERT INTO processos_judiciais VALUES(10,11,'2009-03-13','2014-01-13','julgado','procedente');
+INSERT INTO processos_judiciais VALUES(11,26,'2008-06-22','2014-02-14','julgado','improcedente');
 
 -- (id do apoio, id do apoiante, id candidatura)
 INSERT INTO equipes_apoio VALUES(1,51,1);
