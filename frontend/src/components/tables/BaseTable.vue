@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table :data="data" paginated :per-page="20" >
+    <b-table :data="data" paginated :per-page="10" >
       <b-table-column
         v-for="column in columns"
         :key="column.name"

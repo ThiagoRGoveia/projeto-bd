@@ -7,6 +7,7 @@ exports.loadQueries = () => ({
   list_elected: fs.readFileSync('src/queries/listagem-eleitos.sql').toString(),
   list_support_teams: fs.readFileSync('src/queries/listagem-equipes-apoio.sql').toString(),
   list_crime_free_candidates: fs.readFileSync('src/queries/listagem-candidatos-ficha-limpa.sql').toString(),
+  list_parties: fs.readFileSync('src/queries/listagem-partidos.sql').toString(),
   delete_position: fs.readFileSync('src/dml/delete-cargo.sql').toString(),
   delete_support_team: fs.readFileSync('src/dml/delete-equipe-apoio.sql').toString(),
   delete_individual: fs.readFileSync('src/dml/delete-individuo.sql').toString(),

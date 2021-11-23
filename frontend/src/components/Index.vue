@@ -1,6 +1,6 @@
 <template>
   <div class="table-container">
-    <div class="container table-container">
+    <div class="container">
       <b-select
         v-model="selectedTable"
         placeholder="Selecione uma tabela"
@@ -33,6 +33,7 @@ export default {
         {table: 'list_elected', label: 'Eleitos'},
         {table: 'list_support_teams', label: 'Equipes de apoio'},
         {table: 'list_crime_free_candidates', label: 'Candidatos ficha limpa'},
+        {table: 'list_parties', label: 'Partidos'},
       ]
     }
   },
@@ -44,5 +45,9 @@ export default {
 <style>
   .table-container {
     margin-top: 80px;
+    margin-bottom: 100px;
+  }
+  .table-container > .container {
+    overflow-x: hidden;
   }
 </style>

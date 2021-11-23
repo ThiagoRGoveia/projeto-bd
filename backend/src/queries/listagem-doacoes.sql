@@ -1,4 +1,4 @@
-SELECT d.id as id, i_cg.nome as candidato, i.nome as doador, d.valor_doado as doacao from doacoes AS d
+SELECT d.id AS id, i_cg.nome AS candidato, i.nome AS doador, d.valor_doado AS doacao from doacoes AS d
   INNER JOIN individuos AS i ON i.id = d.individuo_id
   INNER JOIN candidaturas AS c ON c.id = d.candidatura_id
   INNER JOIN candidatos AS cg ON c.candidato_id = cg.id
