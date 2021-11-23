@@ -93,3 +93,16 @@ $checar_tipo_pessoa_fisica$ LANGUAGE plpgsql;
 CREATE TRIGGER checar_tipo_pessoa_fisica
 BEFORE INSERT OR UPDATE ON individuos_pessoa_fisica
 FOR EACH ROW EXECUTE PROCEDURE checar_tipo_pessoa_fisica();
+
+CREATE OR REPLACE FUNCTION data_fim_julgamento() RETURNS trigger AS $data_fim_julgamento$
+BEGIN
+	IF 
+	OLD.status_processo <> 'julgado' AND NEW.status_processo = 'julgado'
+	THEN UPDATE processos_judiciais SET data_fim = CURRENT_DATE + INTERVAL '5 year';
+	END IF;
+	RETURN NEW;
+END;
+$data_fim_julgamento$ LANGUAGE plpgsql;
+CREATE TRIGGER data_fim_julgamento
+AFTER UPDATE ON processos_judiciais
+FOR EACH ROW EXECUTE PROCEDURE data_fim_julgamento();
