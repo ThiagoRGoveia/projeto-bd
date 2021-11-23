@@ -272,7 +272,7 @@ INSERT INTO pleitos VALUES(2,2024,'municipal');
 
 --(id candidatura, id candidato, id cargo, id pleito , ano, votos, vice candidato, eleito booleano)
 --presidentes
-INSERT INTO candidaturas VALUES(1,1,1,1,2022,57,1,TRUE);
+INSERT INTO candidaturas VALUES(1,1,1,1,2022,57,51,TRUE);
 INSERT INTO candidaturas VALUES(2,2,1,1,2022,47,52,FALSE);
 INSERT INTO candidaturas VALUES(3,30,1,1,2022,4,53,FALSE);
 INSERT INTO candidaturas VALUES(4,35,1,1,2022,0,34,FALSE);
