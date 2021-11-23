@@ -55,7 +55,11 @@ INSERT INTO individuos VALUES(53,'Cristiano Lohbauer');
 INSERT INTO individuos VALUES(54,'Adelaide Oliver');
 INSERT INTO individuos VALUES(55,'Rodrigo Garça');
 INSERT INTO individuos VALUES(56,'Fernand Haddar');
-
+INSERT INTO individuos VALUES(57,'Tio da Van');
+INSERT INTO individuos VALUES(58,'Walfrido Guides Sea');
+INSERT INTO individuos VALUES(59,'Paul Marine');
+INSERT INTO individuos VALUES(60,'Airton Garça');
+INSERT INTO individuos VALUES(61,'Ed Ferraz');
 
 
 --(id partido , nome, sigla, numero eleitoral, programa)
@@ -144,6 +148,11 @@ INSERT INTO individuos_pessoa_fisica VALUES(53,'95807513070','1978-01-14',53);
 INSERT INTO individuos_pessoa_fisica VALUES(54,'17499697002','1982-03-11',54);
 INSERT INTO individuos_pessoa_fisica VALUES(55,'26221056063','1980-01-13',55);
 INSERT INTO individuos_pessoa_fisica VALUES(56,'35848157030','1983-02-02',56);
+INSERT INTO individuos_pessoa_fisica VALUES(57,'71290184020','1984-12-22',56);
+INSERT INTO individuos_pessoa_fisica VALUES(58,'63185423020','1973-08-21',57);
+INSERT INTO individuos_pessoa_fisica VALUES(59,'90398929033','1990-01-28',58);
+INSERT INTO individuos_pessoa_fisica VALUES(60,'75649234825','1949-10-17',60);
+INSERT INTO individuos_pessoa_fisica VALUES(61,'48839516000','1975-10-14',61);
 
 
 --(id cadidato, id pessoa fisica, id partido)
@@ -203,6 +212,8 @@ INSERT INTO candidatos VALUES(53,53,30);
 INSERT INTO candidatos VALUES(54,54,25);
 INSERT INTO candidatos VALUES(55,55,45);
 INSERT INTO candidatos VALUES(56,56,13);
+INSERT INTO candidatos VALUES(57,60,17);
+INSERT INTO candidatos VALUES(58,61,17);
 
 INSERT INTO cargos VALUES(01,'Presidente da Republica',1,NULL,NULL,TRUE);
 INSERT INTO cargos VALUES(02,'Deputado Federal',513,NULL,NULL,TRUE);
@@ -325,7 +336,10 @@ INSERT INTO candidaturas VALUES(44,49,224,1,2022,150,NULL,TRUE);
 INSERT INTO candidaturas VALUES(45,50,224,1,2022,160,NULL,TRUE);
 
 --vereador
-INSERT INTO candidaturas VALUES(46,41,302,2,2024,99999,NULL,TRUE);
+INSERT INTO candidaturas VALUES(46,41,302,2,2024,50,NULL,TRUE);
+
+-- prefeito
+INSERT INTO candidaturas VALUES(47,57,301,2,2024,250,58,TRUE);
 
 -- (id do processo, id individuo, data inicio, data fim, status processo, resultado)
 INSERT INTO processos_judiciais VALUES(1,2,'2017-08-18','2021-08-18','julgado','improcedente');
@@ -341,10 +355,14 @@ INSERT INTO equipes_apoio VALUES(3,53,3);
 INSERT INTO equipes_apoio VALUES(4,34,4);
 
 --(id da doacao, id do individuo, id da candidatura, valor doado)
-INSERT INTO doacoes VALUES(1,51,1,99500.50);
-INSERT INTO doacoes VALUES(2,52,1,99500.50);
-INSERT INTO doacoes VALUES(3,53,1,0.0);
-INSERT INTO doacoes VALUES(4,34,1,100000.00);
+INSERT INTO doacoes VALUES(1,51,1,625.50);
+INSERT INTO doacoes VALUES(2,52,2,965.50);
+INSERT INTO doacoes VALUES(3,34,4,341.00);
+INSERT INTO doacoes VALUES(4,57,1,172000.00);
+INSERT INTO doacoes VALUES(5,58,2,1930000.00);
+INSERT INTO doacoes VALUES(6,59,33,251000.00);
+INSERT INTO doacoes VALUES(7,57,11,30200.00);
+INSERT INTO doacoes VALUES(8,57,45,20200.00);
 
 --(id da pessoa juridica, cnpj, id do individuo)
 INSERT INTO individuos_pessoa_juridica VALUES(1,'06551447000135',1);
@@ -403,3 +421,7 @@ INSERT INTO individuos_pessoa_juridica VALUES(53,'20067047000180',53);
 INSERT INTO individuos_pessoa_juridica VALUES(54,'88414977000104',54);
 INSERT INTO individuos_pessoa_juridica VALUES(55,'02803213000187',55);
 INSERT INTO individuos_pessoa_juridica VALUES(56,'00127012000181',56);
+INSERT INTO individuos_pessoa_juridica VALUES(57,'65086855000122',57);
+INSERT INTO individuos_pessoa_juridica VALUES(58,'43749280000148',58);
+INSERT INTO individuos_pessoa_juridica VALUES(59,'08462002000104',59);
+INSERT INTO individuos_pessoa_juridica VALUES(60,'86081415000152',60);
