@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS processos_judiciais (
   data_inicio DATE NOT NULL,
   data_fim DATE,
   status_processo VARCHAR(255) NOT NULL,
-  resultado VARCHAR(255) NOT NULL,
+  resultado VARCHAR(255),
 
   CONSTRAINT individuos_processo_judicial_individuo_id_fk
       FOREIGN KEY (individuo_id)
