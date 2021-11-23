@@ -67,60 +67,82 @@ INSERT INTO individuos VALUES(64,'Energiabras');
 
 --(id partido , nome, sigla, numero eleitoral, programa)
 INSERT INTO partidos VALUES(11,'Progressistas','PP',11,
-'empenhados em contribuir para a construção de um País moderno e de uma sociedade baseada na dignidade humana');
+'Empenhados em contribuir para a construção de um País moderno e de uma sociedade baseada na dignidade humana');
 
 INSERT INTO partidos VALUES(12,'Partido Democratico Trabalhista','PDT',12,
 'Assistir desde o ventre materno, alimentar, escolarizar, acolher e educar todas as crianças no nosso país; com igualdade de oportunidade para todos');
 
 INSERT INTO partidos VALUES(13,'Partido dos Trabalhadores','PT',13,
-'Fazer as reformas necessárias para a transformação social do País e também fortalecer a
-democracia, tanto representativa quanto participativa.');
+'Fazer as reformas necessárias para a transformação social do País e também fortalecer a democracia, tanto representativa quanto participativa.');
 
-INSERT INTO partidos VALUES(14,'Partido Trabalhista Brasileiro','PTB',14,'');
+INSERT INTO partidos VALUES(14,'Partido Trabalhista Brasileiro','PTB',14,
+'Consolidar a vocação do trabalhismo, propondo soluções e alargando os caminhos para a sociedade brasileira.');
 
-INSERT INTO partidos VALUES(15,'Movimento Democrático Brasileiro','MDB',15,'');
+INSERT INTO partidos VALUES(15,'Movimento Democrático Brasileiro','MDB',15,
+'Defender, intransigentemente, o interesse nacional, concebido como o interesse do povo brasileiro na preservação do território e da soberania nacional');
 
-INSERT INTO partidos VALUES(16,'Partido Socialista dos Trabalhadores Unificado','PSTU',16,'');
+INSERT INTO partidos VALUES(16,'Partido Socialista dos Trabalhadores Unificado','PSTU',16,
+'Apresentar à classe trabalhadora e o povo pobre do Brasil, uma alternativa socialista e revolucionária');
 
-INSERT INTO partidos VALUES(17,'Partido Social Liberal','PSL',17,'');
+INSERT INTO partidos VALUES(17,'Partido Social Liberal','PSL',17,
+'Segurança pública nacional, em todos os níveis, prestigiando, protegendo e apoiando os respectivos órgãos que nela atuam');
 
-INSERT INTO partidos VALUES(18,'Rede Sustentabilidade','REDE',18,'');
+INSERT INTO partidos VALUES(18,'Rede Sustentabilidade','REDE',18,
+'Fruto de um movimento aberto, autônomo e suprapartidário que reúne brasileiros decididos a reinventar o futuro do país.​');
 
-INSERT INTO partidos VALUES(19,'Podemos','PODE',19,'');
+INSERT INTO partidos VALUES(19,'Podemos','PODE',19,
+'O nosso senso de comunidade impede que adotemos um capitalismo cego, sem solidariedade ou compaixão, O nosso senso de justiça, os nosso valores cristãos e que são compartilhados pelas outras religiões, exigem que as grandes desigualdades econômicas sejam superadas');
 
-INSERT INTO partidos VALUES(20,'Partido Social Cristão','PSC',20,'');
+INSERT INTO partidos VALUES(20,'Partido Social Cristão','PSC',20,
+'Na democracia, o principal fator da evolução humana é a força espiritual e moral. Mais que a força material, o fator social religião anima, inspira e fortalece as células do organismo democrático.');
 
-INSERT INTO partidos VALUES(21,'Partido Comunista Brasileiro','PCB',21,'');
+INSERT INTO partidos VALUES(21,'Partido Comunista Brasileiro','PCB',21,
+'Desenvolvimento dos setores econômicos fundamentais do país (petróleo, siderurgia, eletricidade, indústria química, energia atômica, transporte e outros ), através de empresas estatais.');
 
-INSERT INTO partidos VALUES(22,'Partido Liberal','PL',22,'');
+INSERT INTO partidos VALUES(22,'Partido Liberal','PL',22,
+'Reafirmamos nossa crença na Pessoa livre, titular de direitos naturais e inalienáveis; na Sociedade, unidade orgânica e comunidade de homens; na Política, atividade voltada para a administração da sociedade, com vistas ao Bem Comum.');
 
-INSERT INTO partidos VALUES(25,'Democratas','DEM',25,'');
+INSERT INTO partidos VALUES(25,'Democratas','DEM',25,
+'Defensor da ética, da democracia, do exercício dos direitos humanos, da economia de mercado e do liberalismo econômico');
 
-INSERT INTO partidos VALUES(27,'Democracia crista','DC',27,'');
+INSERT INTO partidos VALUES(27,'Democracia crista','DC',27,
+'Construir em nosso país, uma sociedade verdadeiramente Livre, Justa e Solidária');
 
-INSERT INTO partidos VALUES(28,'Partido Renovador Trabalhista Brasileiro','PRTB',28,'');
+INSERT INTO partidos VALUES(28,'Partido Renovador Trabalhista Brasileiro','PRTB',28,
+'O Trabalho gera riquezas, que por sua vez se transformam em bem-estar social. Quando todos tivermos acesso a compartilhar das oportunidades criadas, seja como empregados ou como empregadores, poderemos mais rápido desenvolver o País');
 
-INSERT INTO partidos VALUES(29,'Partido da Causa Operaria','PCO',29,'');
+INSERT INTO partidos VALUES(29,'Partido da Causa Operaria','PCO',29,
+'Sobre a tática revolucionária nas eleições: Defesa da revolução e do socialismo');
 
-INSERT INTO partidos VALUES(30,'Partido Novo','NOVO',30,'');
+INSERT INTO partidos VALUES(30,'Partido Novo','NOVO',30,
+'Defesa de um Estado democrático que preserve liberdades individuais, incentive o empreendedorismo, a concorrência, e a participação do cidadão na vida política');
 
-INSERT INTO partidos VALUES(33,'Partido da Mobilização Nacional','PMN',33,'');
+INSERT INTO partidos VALUES(33,'Partido da Mobilização Nacional','PMN',33,
+'Realização da reforma agrária, adoção de uma política externa independente e voltada para o Terceiro Mundo e o rompimento com o Fundo Monetário Internacional');
 
-INSERT INTO partidos VALUES(35,'Partido da Mulher Brasileira','PMB',35,'');
+INSERT INTO partidos VALUES(35,'Partido da Mulher Brasileira','PMB',35,
+'Propor uma nova forma de fazer política, com ética, honra, respeito, dignidade e patriotismo, convidando o envolvimento de mulheres e homens, para trabalharem por uma sociedade mais justa e igualitária.');
 
-INSERT INTO partidos VALUES(36,'Partido Trabalhista Cristão','PTC',36,'');
+INSERT INTO partidos VALUES(36,'Partido Trabalhista Cristão','PTC',36,
+'Vontade de mudar a forma como a política hoje é desenvolvida no Brasil.');
 
-INSERT INTO partidos VALUES(40,'Partido Socialista Brasileiro','PSB',40,'');
+INSERT INTO partidos VALUES(40,'Partido Socialista Brasileiro','PSB',40,
+' As peculiaridades nacionais serão, consideradas, de modo que a aplicação de seus princípios não constitua solução de continuidade na história política do país, nem violência às características culturais do povo brasileiro');
 
-INSERT INTO partidos VALUES(43,'Partido Verde','PV',43,'');
+INSERT INTO partidos VALUES(43,'Partido Verde','PV',43,
+'O PV luta pelo fortalecimento do movimento ecologista e pela realização das suas propostas.');
 
-INSERT INTO partidos VALUES(45,'Partido da Social Democracia Brasileira','PSDB',45,'');
+INSERT INTO partidos VALUES(45,'Partido da Social Democracia Brasileira','PSDB',45,
+'Defender os compromissos fundamentais com a democracia, a justiça, o desenvolvimento e a soberania nacional');
 
-INSERT INTO partidos VALUES(50,'Partido Socialismo e Liberdade','PSOL',50,'');
+INSERT INTO partidos VALUES(50,'Partido Socialismo e Liberdade','PSOL',50,
+'Socialismo com democracia, como princípio estratégico na superação da ordem capitalista.');
 
-INSERT INTO partidos VALUES(55,'Partido Social Democrático','PSD',55,'');
+INSERT INTO partidos VALUES(55,'Partido Social Democrático','PSD',55,
+'Revisão da Constituição, consubstanciando os princípios de regime democrático, social e federativo, fundado na representação do povo e na verdade eleitoral.');
 
-INSERT INTO partidos VALUES(65,'Partido Comunista do Brasil','PCdoB',65,'');
+INSERT INTO partidos VALUES(65,'Partido Comunista do Brasil','PCdoB',65,
+'O objetivo essencial deste Programa é a transição do capitalismo ao socialismo nas condições do Brasil e do mundo contemporâneo');
 
 
 --(id pessoa fisica, cpf, data de nascimento, id individuo)
