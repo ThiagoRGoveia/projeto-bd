@@ -1,7 +1,7 @@
 const fs = require('fs')
 exports.loadQueries = () => ({
   list_candidacy: fs.readFileSync('src/queries/listagem-candidaturas.sql').toString(),
-  filter_candidacy: fs.readFileSync('src/queries/fiter-candidaturas.sql').toString(),
+  filter_candidacy: fs.readFileSync('src/queries/filter-candidaturas.sql').toString(),
   list_donations: fs.readFileSync('src/queries/listagem-doacoes.sql').toString(),
   list_suits: fs.readFileSync('src/queries/listagem-processos.sql').toString(),
   list_elected: fs.readFileSync('src/queries/listagem-eleitos.sql').toString(),
@@ -12,5 +12,4 @@ exports.loadQueries = () => ({
   delete_individual: fs.readFileSync('src/dml/delete-individuo.sql').toString(),
   delete_party: fs.readFileSync('src/dml/delete-partido.sql').toString(),
   delete_election: fs.readFileSync('src/dml/delete-pleito.sql').toString()
-
 })

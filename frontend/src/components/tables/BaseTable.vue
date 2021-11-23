@@ -11,7 +11,7 @@
       >
         {{ $columnFormater(column.name, props.row[column.name]) }}
       </b-table-column>
-      <b-table-column>
+      <b-table-column label="Deletar">
         <b-button
           type="is-danger"
           icon-right="delete"
@@ -24,15 +24,15 @@
 </template>
 
 <script>
-import aluno from './columns/aluno'
+import getColumns from './columns/index'
 
 export default {
   name: 'BaseTable',
-  props: ['entity'],
+  props: ['entity', 'table'],
   data () {
     return {
       data: [],
-      columns: aluno
+      columns: []
     }
   },
   methods: {
@@ -42,11 +42,21 @@ export default {
       )
     }
   },
+  watch: {
+    table() {
+    this.$http.get(`/query?query=${this.table}`).then(({data}) =>{
+        this.data = data
+        this.columns = getColumns(this.table)
+      })
+    }
+  },
   created () {
-    this.$http.get('/query?query=first').then(({data}) =>{
-      console.log(data)
-      this.data = data
-    })
+      this.$http.get(`/query?query=${this.table}`).then(({data}) =>{
+        if (data) {
+          this.data = data
+          this.columns = getColumns(this.table)
+        }
+      })
   }
 }
 </script>
