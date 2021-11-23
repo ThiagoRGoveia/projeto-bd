@@ -1,5 +1,5 @@
 exports.dbRepository = ({ dbConnection }) => ({
-  execute (query) {
-    return dbConnection.query({ query })
+  execute (query, values) {
+    return dbConnection.query({ query, values })
   }
 })
