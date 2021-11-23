@@ -1,0 +1,2 @@
+SELECT p.id as id, i.nome as candidato, p.resultado AS resultado, p.data_inicio as julgamento, p.data_fim as validade, p.status_processo as status from processos_judiciais AS p
+  INNER JOIN individuos AS i on p.individuo_id = i.id

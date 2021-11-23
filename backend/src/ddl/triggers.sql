@@ -1,11 +1,11 @@
 CREATE OR REPLACE FUNCTION checar_ficha_limpa() RETURNS trigger AS $checar_ficha_limpa$
 BEGIN
   IF EXISTS(
-      SELECT 1 FROM processos WHERE individuo_id IN (
+      SELECT 1 FROM processos_judiciais WHERE individuo_id IN (
         SELECT individuo_id FROM individuos_pessoa_fisica WHERE individuo_pessoa_fisica_id IN (
           SELECT individuo_pessoa_fisica_id FROM candidatos WHERE id = NEW.candidato_id
         )
-      ) AND resultado = 'procedente'
+      ) AND resultado = 'procedente' AND data_fim < data_inicio + INTERVAL '5 year'
     )
   THEN RAISE EXCEPTION 'Não é possível adicionar a candidatura, pois o candidato % possui processos com resultado "procedente".', NEW.candidato_id;
   END IF;
@@ -20,11 +20,9 @@ FOR EACH ROW EXECUTE PROCEDURE checar_ficha_limpa();
 CREATE OR REPLACE FUNCTION checar_doacao_pj() RETURNS trigger AS $checar_doacao_pj$
 BEGIN
   IF EXISTS(
-      SELECT 1 FROM individuos_pessoa_juridica WHERE individuo_id  IN (
-          SELECT individuo_id FROM doadores WHERE id = NEW.doador_id
-      )
+      SELECT 1 FROM individuos_pessoa_juridica WHERE individuo_id  = NEW.individuo_id
     ) AND EXISTS(
-      SELECT 1 FROM candidaturas WHERE id = NEW.candidatura_id AND doador_id = NEW.doador_id
+      SELECT 1 FROM doacoes WHERE doacoes.candidatura_id = NEW.candidatura_id AND individuo_id = NEW.individuo_id
     )
     THEN RAISE EXCEPTION 'Não é possível adicionar a doacao pois esta empresa já doou para esta campanha.';
   END IF;
@@ -32,7 +30,7 @@ BEGIN
 END;
 $checar_doacao_pj$ LANGUAGE plpgsql;
 CREATE TRIGGER checar_doacao_pj
-BEFORE INSERT OR UPDATE ON candidatura_doacao
+BEFORE INSERT OR UPDATE ON doacoes
 FOR EACH ROW EXECUTE PROCEDURE checar_doacao_pj();
 
 CREATE OR REPLACE FUNCTION checar_vice_candidato() RETURNS trigger AS $checar_vice_candidato$

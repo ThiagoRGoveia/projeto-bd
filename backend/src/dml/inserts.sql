@@ -55,7 +55,14 @@ INSERT INTO individuos VALUES(53,'Cristiano Lohbauer');
 INSERT INTO individuos VALUES(54,'Adelaide Oliver');
 INSERT INTO individuos VALUES(55,'Rodrigo Garça');
 INSERT INTO individuos VALUES(56,'Fernand Haddar');
-
+INSERT INTO individuos VALUES(57,'Tio da Van');
+INSERT INTO individuos VALUES(58,'Walfrido Guides Sea');
+INSERT INTO individuos VALUES(59,'Paul Marine');
+INSERT INTO individuos VALUES(60,'Airton Garça');
+INSERT INTO individuos VALUES(61,'Ed Ferraz');
+INSERT INTO individuos VALUES(62,'Odebrecht');
+INSERT INTO individuos VALUES(63,'Oleobras');
+INSERT INTO individuos VALUES(64,'Energiabras');
 
 
 --(id partido , nome, sigla, numero eleitoral, programa)
@@ -144,6 +151,8 @@ INSERT INTO individuos_pessoa_fisica VALUES(53,'95807513070','1978-01-14',53);
 INSERT INTO individuos_pessoa_fisica VALUES(54,'17499697002','1982-03-11',54);
 INSERT INTO individuos_pessoa_fisica VALUES(55,'26221056063','1980-01-13',55);
 INSERT INTO individuos_pessoa_fisica VALUES(56,'35848157030','1983-02-02',56);
+INSERT INTO individuos_pessoa_fisica VALUES(57,'75649234825','1949-10-17',60);
+INSERT INTO individuos_pessoa_fisica VALUES(58,'48839516000','1975-10-14',61);
 
 
 --(id cadidato, id pessoa fisica, id partido)
@@ -203,6 +212,8 @@ INSERT INTO candidatos VALUES(53,53,30);
 INSERT INTO candidatos VALUES(54,54,25);
 INSERT INTO candidatos VALUES(55,55,45);
 INSERT INTO candidatos VALUES(56,56,13);
+INSERT INTO candidatos VALUES(57,57,17);
+INSERT INTO candidatos VALUES(58,58,17);
 
 INSERT INTO cargos VALUES(01,'Presidente da Republica',1,NULL,NULL,TRUE);
 INSERT INTO cargos VALUES(02,'Deputado Federal',513,NULL,NULL,TRUE);
@@ -272,7 +283,7 @@ INSERT INTO pleitos VALUES(2,2024,'municipal');
 
 --(id candidatura, id candidato, id cargo, id pleito , ano, votos, vice candidato, eleito booleano)
 --presidentes
-INSERT INTO candidaturas VALUES(1,1,1,1,2022,57,1,TRUE);
+INSERT INTO candidaturas VALUES(1,1,1,1,2022,57,51,TRUE);
 INSERT INTO candidaturas VALUES(2,2,1,1,2022,47,52,FALSE);
 INSERT INTO candidaturas VALUES(3,30,1,1,2022,4,53,FALSE);
 INSERT INTO candidaturas VALUES(4,35,1,1,2022,0,34,FALSE);
@@ -310,7 +321,7 @@ INSERT INTO candidaturas VALUES(35,40,2,1,2022,300,NULL,TRUE);
 --governadores
 INSERT INTO candidaturas VALUES(31,29,124,1,2022,11,56,FALSE);
 INSERT INTO candidaturas VALUES(32,37,124,1,2022,10,54,FALSE);
-INSERT INTO candidaturas VALUES(33,38,124,1,2022,6,55,FALSE);
+INSERT INTO candidaturas VALUES(33,38,124,1,2022,6,55,TRUE);
 
 -- deputados estaduais
 INSERT INTO candidaturas VALUES(36,39,224,1,2022,100,NULL,TRUE);
@@ -325,13 +336,16 @@ INSERT INTO candidaturas VALUES(44,49,224,1,2022,150,NULL,TRUE);
 INSERT INTO candidaturas VALUES(45,50,224,1,2022,160,NULL,TRUE);
 
 --vereador
-INSERT INTO candidaturas VALUES(46,41,302,2,2024,99999,NULL,TRUE);
+INSERT INTO candidaturas VALUES(46,41,302,2,2024,50,NULL,TRUE);
+
+-- prefeito
+INSERT INTO candidaturas VALUES(47,57,301,2,2024,250,58,TRUE);
 
 -- (id do processo, id individuo, data inicio, data fim, status processo, resultado)
 INSERT INTO processos_judiciais VALUES(1,2,'2017-08-18','2021-08-18','julgado','improcedente');
 INSERT INTO processos_judiciais VALUES(2,1,'2017-09-03','2021-09-06','julgado','improcedente');
-INSERT INTO processos_judiciais VALUES(3,36,'2016-05-07','2019-10-30','julgado','procedente');
-INSERT INTO processos_judiciais VALUES(4,37,'2018-05-02','2021-02-23','julgado','procedente');
+INSERT INTO processos_judiciais VALUES(3,25,'2016-05-07','2019-10-30','julgado','procedente');
+INSERT INTO processos_judiciais VALUES(4,14,'2018-05-02','2021-02-23','julgado','procedente');
 INSERT INTO processos_judiciais VALUES(5,14,'2015-11-22','2021-02-23','julgado','procedente');
 
 -- (id do apoio, id do apoiante, id candidatura)
@@ -341,65 +355,24 @@ INSERT INTO equipes_apoio VALUES(3,53,3);
 INSERT INTO equipes_apoio VALUES(4,34,4);
 
 --(id da doacao, id do individuo, id da candidatura, valor doado)
-INSERT INTO doacoes VALUES(1,51,1,99500.50);
-INSERT INTO doacoes VALUES(2,52,1,99500.50);
-INSERT INTO doacoes VALUES(3,53,1,0.0);
-INSERT INTO doacoes VALUES(4,34,1,100000.00);
+INSERT INTO doacoes VALUES(1,57,1,172000.00);
+INSERT INTO doacoes VALUES(2,58,2,193000.00);
+INSERT INTO doacoes VALUES(3,59,33,112000.00);
+INSERT INTO doacoes VALUES(4,57,11,30200.00);
+INSERT INTO doacoes VALUES(5,57,45,20200.00);
+INSERT INTO doacoes VALUES(6,58,4,34300.00);
+INSERT INTO doacoes VALUES(7,58,31,80300.00);
+INSERT INTO doacoes VALUES(8,59,27,40100.00);
+INSERT INTO doacoes VALUES(9,59,42,29550.00);
+INSERT INTO doacoes VALUES(10,62,2,6720000.00);
+INSERT INTO doacoes VALUES(11,63,2,9520000.00);
+INSERT INTO doacoes VALUES(12,64,2,2510000.00);
+
 
 --(id da pessoa juridica, cnpj, id do individuo)
-INSERT INTO individuos_pessoa_juridica VALUES(1,'06551447000135',1);
-INSERT INTO individuos_pessoa_juridica VALUES(2,'36479833000124',2);
-INSERT INTO individuos_pessoa_juridica VALUES(3,'04703685000193',3);
-INSERT INTO individuos_pessoa_juridica VALUES(4,'04503787000165',4);
-INSERT INTO individuos_pessoa_juridica VALUES(5,'53342607000116',5);
-INSERT INTO individuos_pessoa_juridica VALUES(6,'10369422000192',6);
-INSERT INTO individuos_pessoa_juridica VALUES(7,'34774430000182',7);
-INSERT INTO individuos_pessoa_juridica VALUES(8,'00562650000120',8);
-INSERT INTO individuos_pessoa_juridica VALUES(9,'07997535000128',9);
-INSERT INTO individuos_pessoa_juridica VALUES(10,'90301097000165',10);
-INSERT INTO individuos_pessoa_juridica VALUES(11,'05850177000109',11);
-INSERT INTO individuos_pessoa_juridica VALUES(12,'80394761000104',12);
-INSERT INTO individuos_pessoa_juridica VALUES(13,'34458368000110',13);
-INSERT INTO individuos_pessoa_juridica VALUES(14,'74274443000107',14);
-INSERT INTO individuos_pessoa_juridica VALUES(15,'71327660000120',15);
-INSERT INTO individuos_pessoa_juridica VALUES(16,'50071447000120',16);
-INSERT INTO individuos_pessoa_juridica VALUES(17,'72944943000183',17);
-INSERT INTO individuos_pessoa_juridica VALUES(18,'52134437000111',18);
-INSERT INTO individuos_pessoa_juridica VALUES(19,'53034302000147',19);
-INSERT INTO individuos_pessoa_juridica VALUES(20,'18931898000187',20);
-INSERT INTO individuos_pessoa_juridica VALUES(21,'96348127000175',21);
-INSERT INTO individuos_pessoa_juridica VALUES(22,'84991498000191',22);
-INSERT INTO individuos_pessoa_juridica VALUES(23,'44273178000181',23);
-INSERT INTO individuos_pessoa_juridica VALUES(24,'24178815000123',24);
-INSERT INTO individuos_pessoa_juridica VALUES(25,'71963994000190',25);
-INSERT INTO individuos_pessoa_juridica VALUES(26,'35183460000187',26);
-INSERT INTO individuos_pessoa_juridica VALUES(27,'69968085000100',27);
-INSERT INTO individuos_pessoa_juridica VALUES(28,'77844491000181',28);
-INSERT INTO individuos_pessoa_juridica VALUES(29,'92804929000191',29);
-INSERT INTO individuos_pessoa_juridica VALUES(30,'98080995000142',30);
-INSERT INTO individuos_pessoa_juridica VALUES(31,'09352957000171',31);
-INSERT INTO individuos_pessoa_juridica VALUES(32,'21694228000107',32);
-INSERT INTO individuos_pessoa_juridica VALUES(33,'10507447000105',33);
-INSERT INTO individuos_pessoa_juridica VALUES(34,'04239935000186',34);
-INSERT INTO individuos_pessoa_juridica VALUES(35,'33495866000170',35);
-INSERT INTO individuos_pessoa_juridica VALUES(36,'37622774000164',36);
-INSERT INTO individuos_pessoa_juridica VALUES(37,'25085260000138',37);
-INSERT INTO individuos_pessoa_juridica VALUES(38,'72238083000162',38);
-INSERT INTO individuos_pessoa_juridica VALUES(39,'91089505000120',39);
-INSERT INTO individuos_pessoa_juridica VALUES(40,'51423170000110',40);
-INSERT INTO individuos_pessoa_juridica VALUES(41,'12973138000156',41);
-INSERT INTO individuos_pessoa_juridica VALUES(42,'65743298000175',42);
-INSERT INTO individuos_pessoa_juridica VALUES(43,'80647852000104',43);
-INSERT INTO individuos_pessoa_juridica VALUES(44,'09940076000171',44);
-INSERT INTO individuos_pessoa_juridica VALUES(45,'39001402000146',45);
-INSERT INTO individuos_pessoa_juridica VALUES(46,'32637942000171',46);
-INSERT INTO individuos_pessoa_juridica VALUES(47,'92794258000125',47);
-INSERT INTO individuos_pessoa_juridica VALUES(48,'28836135000100',48);
-INSERT INTO individuos_pessoa_juridica VALUES(49,'40361934000173',49);
-INSERT INTO individuos_pessoa_juridica VALUES(50,'35079156000194',50);
-INSERT INTO individuos_pessoa_juridica VALUES(51,'37802161000109',51);
-INSERT INTO individuos_pessoa_juridica VALUES(52,'01858408000161',52);
-INSERT INTO individuos_pessoa_juridica VALUES(53,'20067047000180',53);
-INSERT INTO individuos_pessoa_juridica VALUES(54,'88414977000104',54);
-INSERT INTO individuos_pessoa_juridica VALUES(55,'02803213000187',55);
-INSERT INTO individuos_pessoa_juridica VALUES(56,'00127012000181',56);
+INSERT INTO individuos_pessoa_juridica VALUES(1,'65086855000122',57);
+INSERT INTO individuos_pessoa_juridica VALUES(2,'43749280000148',58);
+INSERT INTO individuos_pessoa_juridica VALUES(3,'08462002000104',59);
+INSERT INTO individuos_pessoa_juridica VALUES(4,'33216845000178',62);
+INSERT INTO individuos_pessoa_juridica VALUES(5,'99038137000100',63);
+INSERT INTO individuos_pessoa_juridica VALUES(6,'55788515000190',64);
