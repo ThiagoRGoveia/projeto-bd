@@ -41,7 +41,7 @@ export default {
   methods: {
     handleDelete(id) {
       this.$http.get(`/query?query=delete_${this.table}&params[]=${id}`).then(
-        this.row = this.row.filter(row => row.id !== id)
+        this.data = this.data.filter(row => row.id !== id)
       )
     }
   },

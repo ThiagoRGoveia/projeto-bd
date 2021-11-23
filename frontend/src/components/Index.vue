@@ -25,7 +25,7 @@ export default {
   name: 'Index',
   data() {
     return {
-      selectedTable: 'list_candidacy',
+      selectedTable: 'candidacy',
       options: [
         {table: 'candidacy', label: 'Candidaturas'},
         {table: 'donations', label: 'Doações'},
