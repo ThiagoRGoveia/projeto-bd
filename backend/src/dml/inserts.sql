@@ -66,31 +66,60 @@ INSERT INTO individuos VALUES(64,'Energiabras');
 
 
 --(id partido , nome, sigla, numero eleitoral, programa)
-INSERT INTO partidos VALUES(11,'Progressistas','PP',11,'');
-INSERT INTO partidos VALUES(12,'Partido Democratico Trabalhista','PDT',12,'');
-INSERT INTO partidos VALUES(13,'Partido dos Trabalhadores','PT',13,'');
+INSERT INTO partidos VALUES(11,'Progressistas','PP',11,
+'empenhados em contribuir para a construção de um País moderno e de uma sociedade baseada na dignidade humana');
+
+INSERT INTO partidos VALUES(12,'Partido Democratico Trabalhista','PDT',12,
+'Assistir desde o ventre materno, alimentar, escolarizar, acolher e educar todas as crianças no nosso país; com igualdade de oportunidade para todos');
+
+INSERT INTO partidos VALUES(13,'Partido dos Trabalhadores','PT',13,
+'Fazer as reformas necessárias para a transformação social do País e também fortalecer a
+democracia, tanto representativa quanto participativa.');
+
 INSERT INTO partidos VALUES(14,'Partido Trabalhista Brasileiro','PTB',14,'');
+
 INSERT INTO partidos VALUES(15,'Movimento Democrático Brasileiro','MDB',15,'');
+
 INSERT INTO partidos VALUES(16,'Partido Socialista dos Trabalhadores Unificado','PSTU',16,'');
+
 INSERT INTO partidos VALUES(17,'Partido Social Liberal','PSL',17,'');
+
 INSERT INTO partidos VALUES(18,'Rede Sustentabilidade','REDE',18,'');
+
 INSERT INTO partidos VALUES(19,'Podemos','PODE',19,'');
+
 INSERT INTO partidos VALUES(20,'Partido Social Cristão','PSC',20,'');
+
 INSERT INTO partidos VALUES(21,'Partido Comunista Brasileiro','PCB',21,'');
+
 INSERT INTO partidos VALUES(22,'Partido Liberal','PL',22,'');
+
 INSERT INTO partidos VALUES(25,'Democratas','DEM',25,'');
+
 INSERT INTO partidos VALUES(27,'Democracia crista','DC',27,'');
+
 INSERT INTO partidos VALUES(28,'Partido Renovador Trabalhista Brasileiro','PRTB',28,'');
+
 INSERT INTO partidos VALUES(29,'Partido da Causa Operaria','PCO',29,'');
+
 INSERT INTO partidos VALUES(30,'Partido Novo','NOVO',30,'');
+
 INSERT INTO partidos VALUES(33,'Partido da Mobilização Nacional','PMN',33,'');
+
 INSERT INTO partidos VALUES(35,'Partido da Mulher Brasileira','PMB',35,'');
+
 INSERT INTO partidos VALUES(36,'Partido Trabalhista Cristão','PTC',36,'');
+
 INSERT INTO partidos VALUES(40,'Partido Socialista Brasileiro','PSB',40,'');
+
 INSERT INTO partidos VALUES(43,'Partido Verde','PV',43,'');
+
 INSERT INTO partidos VALUES(45,'Partido da Social Democracia Brasileira','PSDB',45,'');
+
 INSERT INTO partidos VALUES(50,'Partido Socialismo e Liberdade','PSOL',50,'');
+
 INSERT INTO partidos VALUES(55,'Partido Social Democrático','PSD',55,'');
+
 INSERT INTO partidos VALUES(65,'Partido Comunista do Brasil','PCdoB',65,'');
 
 
