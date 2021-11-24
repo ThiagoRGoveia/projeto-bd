@@ -1,6 +1,12 @@
 <template>
   <div>
-    <b-table :data="data" paginated :per-page="10" >
+    <b-table
+      :data="data"
+      paginated
+      :per-page="10"
+      @sort="handleSort"
+      backend-sorting
+    >
       <b-table-column
         v-for="column in columns"
         :key="column.name"
@@ -39,6 +45,11 @@ export default {
     }
   },
   methods: {
+    handleSort(column, direction) {
+        this.$http.get(`/query?query=list_${this.table}&order[]=${column}&order[]=${direction}`).then(({data}) =>{
+          this.data = data
+        })
+    },
     handleDelete(id) {
       this.$http.get(`/query?query=delete_${this.table}&params[]=${id}`).then(
         this.data = this.data.filter(row => row.id !== id)
@@ -47,14 +58,14 @@ export default {
   },
   watch: {
     table() {
-    this.$http.get(`/query?query=list_${this.table}`).then(({data}) =>{
-        this.data = data
-        this.columns = getColumns(this.table)
-      })
+      this.$http.get(`/query?query=list_${this.table}&params[]=id&params[]=asc`).then(({data}) =>{
+          this.data = data
+          this.columns = getColumns(this.table)
+        })
     }
   },
   created () {
-      this.$http.get(`/query?query=list_${this.table}`).then(({data}) =>{
+      this.$http.get(`/query?query=list_${this.table}&params[]=id&params[]=asc`).then(({data}) =>{
         if (data) {
           this.data = data
           this.columns = getColumns(this.table)
