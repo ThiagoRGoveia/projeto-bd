@@ -13,4 +13,3 @@ FROM individuos AS i
   LEFT JOIN individuos_pessoa_juridica AS PJ ON i.id = pj.individuo_id
 )
 SELECT * FROM selection
-

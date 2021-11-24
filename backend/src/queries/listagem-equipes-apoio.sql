@@ -8,4 +8,3 @@ WITH selection AS (
     INNER JOIN individuos AS i_cg ON i_cg.id = pf.individuo_id
 )
 SELECT * FROM selection
-

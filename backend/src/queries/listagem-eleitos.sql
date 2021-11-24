@@ -15,4 +15,3 @@ WITH selection AS (
   WHERE eleito = TRUE
 )
 SELECT * FROM selection
-
