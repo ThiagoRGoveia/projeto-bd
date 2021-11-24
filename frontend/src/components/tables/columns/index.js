@@ -3,6 +3,7 @@ import crime_free_candidates from "./crime_free_candidates"
 import donations from "./donations"
 import elected from "./elected"
 import elections from "./elections"
+import individual from "./individual"
 import parties from "./parties"
 import positions from "./positions"
 import suits from "./suits"
@@ -16,7 +17,8 @@ const columns = {
   crime_free_candidates: crime_free_candidates,
   parties: parties,
   positions: positions,
-  elections: elections
+  elections: elections,
+  individuals: individual
 }
 
 export default (column) => {

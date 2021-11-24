@@ -1,12 +1,11 @@
 exports.dbRepository = ({ dbConnection }) => ({
   execute ({ query, values, order, filter }) {
     let newQuery = query
-    if (order) {
-      newQuery = this.concatOrder(query, order)
-    }
-
     if (filter) {
-      newQuery = this.concatFilter(query, filter)
+      newQuery = this.concatFilter(newQuery, filter)
+    }
+    if (order) {
+      newQuery = this.concatOrder(newQuery, order)
     }
     return dbConnection.query({ query: newQuery, values })
   },
@@ -16,6 +15,6 @@ exports.dbRepository = ({ dbConnection }) => ({
   },
 
   concatFilter (query, filter) {
-    return `${query} WHERE LOWER(${filter.col}) LIKE LOWER(%${filter.value}%)`
+    return `${query} WHERE LOWER(CAST(${filter.col} AS varchar)) LIKE LOWER('%${filter.value}%')`
   }
 })
