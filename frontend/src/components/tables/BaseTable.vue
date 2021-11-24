@@ -106,6 +106,7 @@ export default {
       },
       tableOptions: [
         {table: 'candidacy', label: 'Candidaturas'},
+        {table: 'candidates', label: 'Candidatos'},
         {table: 'donations', label: 'Doações'},
         {table: 'suits', label: 'Processos Judiciais'},
         {table: 'elected', label: 'Eleitos'},
@@ -158,6 +159,7 @@ export default {
           this.data = data
           this.columns = getColumns(this.table)
           this.filterOptions = getColumns(this.table)
+          this.query.filter.col = undefined
         })
     }
   },

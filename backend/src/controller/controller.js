@@ -14,7 +14,7 @@ exports.controller = ({ repository, loadQueries }) => ({
         value: filter[1]
       }
     }
-    const response = await repository.execute({ query: loadQueries[query], params, order, filter: filterObj })
+    const response = await repository.execute({ query: loadQueries[query], values: params, order, filter: filterObj })
     res.status(200).send(response)
     res.status(200)
     res.end()

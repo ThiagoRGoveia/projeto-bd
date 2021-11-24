@@ -18,7 +18,7 @@ const columns = {
   parties: parties,
   positions: positions,
   elections: elections,
-  individuals: individual
+  individuals: individual,
 }
 
 export default (column) => {
