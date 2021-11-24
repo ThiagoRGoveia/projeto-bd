@@ -8,9 +8,4 @@ exports.routes = [
     handler: controllerFactory({ method: 'query' }),
     route: '/query'
   }
-  // {
-  //     method: 'get',
-  //     handler: controller({repository}).home,
-  //     route: '/novarota'
-  // }
 ]

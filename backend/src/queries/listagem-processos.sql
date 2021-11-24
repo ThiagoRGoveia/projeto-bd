@@ -1,2 +1,11 @@
-SELECT p.id as id, i.nome as candidato, p.resultado AS resultado, p.data_inicio as julgamento, p.data_fim as validade, p.status_processo as status from processos_judiciais AS p
+WITH selection AS (
+  SELECT
+    p.id AS id,
+    i.nome AS candidato,
+    p.resultado AS resultado,
+    p.data_inicio AS julgamento,
+    p.data_fim AS validade,
+    p.status_processo AS status from processos_judiciais AS p
   INNER JOIN individuos AS i on p.individuo_id = i.id
+)
+SELECT * FROM selection
