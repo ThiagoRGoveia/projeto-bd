@@ -1,9 +1,0 @@
-TODO:
-definir quais tabelas OK
-selecionar colunas para tabelas OK
-corrigir lógica de ficha limpa OK
-criar logica de delete OK
-criar campos de filtro OK
-criar logica de sort OK
-criar trigger para impedir que individuos sejam criados em ambas tabelas individuos_pessoa_fisica e individuos_pessoa_juridica
-criar trigger para preencher data_final ao atualizar um processo judicial ao ser julgado
